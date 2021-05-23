@@ -11,25 +11,25 @@ const MyTabs = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-          let colorName;
+        tabBarIcon: ({ focused}) => {
+          let iconName: string;
+          let colorName: string;
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home';
+            iconName = 'home';
             colorName = !focused ? '#808080' : '#138dff';
           } else if (route.name === 'Profile') {
-            iconName = focused ? 'user' : 'user';
+            iconName = 'user';
             colorName = !focused ? '#808080' : '#138dff';
           } else if (route.name === 'Chart') {
-            iconName = focused ? 'piechart' : 'piechart';
+            iconName = 'piechart';
             colorName = !focused ? '#808080' : '#138dff';
           } else if (route.name === 'Wallet') {
-            iconName = focused ? 'wallet' : 'wallet';
+            iconName = 'wallet';
             colorName = !focused ? '#808080' : '#138dff';
           }
 
           // You can return any component that you like here!
-          return <Icon name={iconName} size={30} color={colorName} type={'antdesign'} />;
+          return <Icon name={iconName} size={24} color={colorName} type={'antdesign'} />;
         },
       })}
       tabBarOptions={{

@@ -1,19 +1,15 @@
 import * as React from 'react';
 import { Icon } from 'react-native-elements';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
-import { Image } from 'react-native-elements';
-import { useState } from 'react';
 
 interface AssetCardInterface {
-  iconName: string | null;
+  iconName: string;
   rateColor: string;
   rateBackgroundColor: string;
   assetType: string;
   assetName: string;
   rate: number | string;
   iconColor: string;
-  iconIsImage: boolean | null;
-  srcImage: string;
 }
 
 const AssetCard: React.FC<AssetCardInterface> = ({
@@ -24,8 +20,6 @@ const AssetCard: React.FC<AssetCardInterface> = ({
   assetType,
   rate,
   iconColor,
-  iconIsImage = false,
-  srcImage = '',
 }) => {
   return (
     <Pressable
@@ -36,63 +30,34 @@ const AssetCard: React.FC<AssetCardInterface> = ({
         styles.assetCard,
       ]}
     >
-      {iconIsImage ? (
-        <View
-          style={{
-            width: '15%',
-            height: '60%',
-            marginLeft: '6%',
-            borderRadius: 14,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Image
-            source={require('../tokopedia.png')}
-            style={{ width: 45, height: 50, justifyContent: 'center',
-
-                shadowColor: '#000',
-                shadowOffset: {
-                    width: 0,
-                    height: 2,
-                },
-                shadowOpacity: 0.1,
-                shadowRadius: 6.68,
-                marginVertical: '10%',
-            }}
-            containerStyle={{ width: '80%' }}
-          />
-        </View>
-      ) : (
-        <Icon
-          name={iconName}
-          color={iconColor}
-          type={'font-awesome-5'}
-          size={36}
-          style={{
-            color: '#86a2b8',
-            backgroundColor: 'white',
-            width: 52,
-            height: 52,
-            justifyContent: 'center',
-            borderRadius: 14,
-            marginLeft: '10%',
-            shadowColor: '#000',
-            shadowOffset: {
-              width: 3,
-              height: 5,
-            },
-            shadowOpacity: 0.09,
-            shadowRadius: 3.00,
-            elevation: 11,
-            marginVertical: '10%'
-          }}
-        />
-      )}
+      <Icon
+        name={iconName}
+        color={iconColor}
+        type={'font-awesome-5'}
+        size={36}
+        style={{
+          color: '#86a2b8',
+          backgroundColor: 'white',
+          width: 52,
+          height: 52,
+          justifyContent: 'center',
+          borderRadius: 14,
+          marginLeft: '10%',
+          shadowColor: '#000',
+          shadowOffset: {
+            width: 3,
+            height: 5,
+          },
+          shadowOpacity: 0.09,
+          shadowRadius: 3.0,
+          elevation: 11,
+          marginVertical: '10%',
+        }}
+      />
       <View
         style={{
           justifyContent: 'space-between',
-          marginHorizontal: iconIsImage ? '5%' : '0%',
+          marginHorizontal: '0%',
           flex: 2,
         }}
       >

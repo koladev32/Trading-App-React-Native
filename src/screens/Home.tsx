@@ -1,5 +1,5 @@
 import React from 'react';
-import {Badge, Button, Header, Icon} from 'react-native-elements';
+import { Badge, Button, Header, Icon } from 'react-native-elements';
 import Layout from '../components/Layout';
 import { View, StyleSheet, Text } from 'react-native';
 import AssetCard from '../components/AssetCard';
@@ -38,28 +38,32 @@ export default function HomeScreen() {
             Welcome back to Coin up
           </Text>
         </View>
-          <View></View>
-          <View style={{
-              backgroundColor: 'white',
+        <View></View>
+        <View
+          style={{
+            backgroundColor: 'white',
+            width: 42,
+            height: 42,
+            borderRadius: 14,
+            alignSelf: 'flex-end',
+          }}
+        >
+          <Icon
+            name={'notifications'}
+            color={'#86a2b8'}
+            style={{
+              color: '#86a2b8',
               width: 42,
               height: 42,
-              borderRadius: 14,
-              alignSelf: 'flex-end'
-          }}>
-              <Icon name={'notifications'}
-              color={'#86a2b8'}
-              style={{
-                  color: '#86a2b8',
-                  width: 42,
-                  height: 42,
-                  justifyContent: 'center',
-              }}/>
-              <Badge
-                  status="success"
-                  containerStyle={{ position: 'absolute', top: '25%', right: '28%' }}
-                  badgeStyle={{backgroundColor: '#138dff'}}
-              />
-          </View>
+              justifyContent: 'center',
+            }}
+          />
+          <Badge
+            status="success"
+            containerStyle={{ position: 'absolute', top: '25%', right: '28%' }}
+            badgeStyle={{ backgroundColor: '#138dff' }}
+          />
+        </View>
       </Header>
       <View style={styles.container}>
         <View style={styles.portfolioRecap}>
@@ -154,15 +158,18 @@ export default function HomeScreen() {
             <Button
               title="Buy"
               type="solid"
-              containerStyle={{ width: '22%', marginHorizontal: '2%', left: '10%',
-                  shadowColor: '#138dff',
-                  shadowOffset: {
-                      width: 2,
-                      height: 5,
-                  },
-                  shadowOpacity: 0.15,
-                  shadowRadius: 10.00,
-                  elevation: 16,
+              containerStyle={{
+                width: '22%',
+                marginHorizontal: '2%',
+                left: '10%',
+                shadowColor: '#138dff',
+                shadowOffset: {
+                  width: 2,
+                  height: 5,
+                },
+                shadowOpacity: 0.15,
+                shadowRadius: 10.0,
+                elevation: 16,
               }}
               buttonStyle={{ backgroundColor: '#138dff', borderRadius: 14, height: '95%' }}
               titleStyle={{ color: '#fff' }}
